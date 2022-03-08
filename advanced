@@ -1,0 +1,17 @@
+#importando a biblioteca qrcode...
+import qrcode
+
+#classe QRCode, que recebe os parâmetros do mesmo
+qr = qrcode.QRCode(
+    version=1, #dimensão da matriz do qrcode
+    error_correction=qrcode.constants.ERROR_CORRECT_L, #indica a capacidade de correção de erro
+    box_size=10,
+    border=4,
+)
+
+qr.add_data('https://www.youtube.com/watch?v=xRrxBpODyEI&t=7s') #adiciona os bytes de dados
+qr.make(fit=True) #forma automaticamente a dimensão do qrcode com base nos dados
+
+img = qr.make_image(fill_color="black", back_color="white") 
+
+img.save("2021.2e.png") #salva o arquivo na extensão desejada
