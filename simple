@@ -1,0 +1,8 @@
+#importando a biblioteca qrcode...
+import qrcode
+
+#utilizando o make para receber os dados
+img = qrcode.make('https://www.youtube.com/watch?v=xRrxBpODyEI&t=7s')
+
+#salva o arquivo na extensão desejada
+img.save("some_file.png")
